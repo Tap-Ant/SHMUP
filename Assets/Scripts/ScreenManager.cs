@@ -31,7 +31,7 @@ public class ScreenManager : MonoBehaviour
 
     void RestoreSettings()
     {
-        if (!PlayerPrefs.HasKey("FullScreen"))
+        if (!PlayerPrefs.HasKey("FullScreen"))//
         {
             int fullScreenInt = PlayerPrefs.GetInt("FullScreen");
             if (fullScreenInt == 0)
