@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : Menu
 {
@@ -17,8 +18,32 @@ public class PauseMenu : Menu
         instance = this;
     }
 
-    public void OnBackButton()
+    public void OnResumeButton()
     {
-        TurnOff(true);
+        GameManager.instance.TogglePause();
+    }
+
+    public void OnSaveButton()
+    {
+        SaveManager.instance.SaveGame(1);
+    }
+
+    public void OnLoadButton()
+    {
+        if (SaveManager.instance.LoadExists(1))
+        {
+            SaveManager.instance.LoadGame(1);
+        }
+    }
+
+    public void OnOptionsButton()
+    {
+        TurnOff(false);
+        OptionsMenu.instance.TurnOn(this);
+    }
+
+    public void OnMainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

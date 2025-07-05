@@ -8,16 +8,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DisplayRender
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerBullets
+  - EnemyBullets
+  - 3DBackground
+  - GroundEnemy
+  - PickUp
   - 
   - 
   - 

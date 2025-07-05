@@ -71,4 +71,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/ControllerMenu.unity
     guid: 32ce86c2a60d80c4aafd6c5fb532fe16
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage01.unity
+    guid: fab2c484fb9f5c54383b7cfcb684c5f8
+  - enabled: 1
+    path: Assets/Scenes/DisplayScene.unity
+    guid: f6019310e490cee44afa283a8cef9d52
+  - enabled: 1
+    path: Assets/Scenes/DebugHUDScene.unity
+    guid: 23b0129fff1cceb498f9e75d65add7ce
+  - enabled: 1
+    path: Assets/Scenes/Menus/GameOverMenu.unity
+    guid: 95d5d0325b2eafe44b2f8c967bfafd3c
+  - enabled: 1
+    path: Assets/Scenes/Menus/KeypadMenu.unity
+    guid: a0e1be80955df964ea12494c76876845
   m_configObjects: {}

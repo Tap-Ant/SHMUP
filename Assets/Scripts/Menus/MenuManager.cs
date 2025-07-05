@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager instance = null;
     internal Menu activeMenu = null;
+    private bool titleMenuShown = false;
 
     private void Start()
     {
@@ -30,6 +31,10 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("ControlsOptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("YesNoMenu",           LoadSceneMode.Additive);
         SceneManager.LoadScene("ControllerMenu",      LoadSceneMode.Additive);
+        SceneManager.LoadScene("GameOverMenu",        LoadSceneMode.Additive);
+        SceneManager.LoadScene("KeypadMenu",        LoadSceneMode.Additive);
+
+        SceneManager.LoadScene("DebugHUDScene",       LoadSceneMode.Additive);
     }
 
     public void SwitchToMainMenuMenus()
@@ -49,7 +54,25 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("ReplaysMenu",         LoadSceneMode.Additive);
         SceneManager.LoadScene("ScoresMenu",          LoadSceneMode.Additive);
         SceneManager.LoadScene("YesNoMenu",           LoadSceneMode.Additive);
-        SceneManager.LoadScene("TitleScreenMenu",     LoadSceneMode.Additive);
         SceneManager.LoadScene("ControllerMenu",      LoadSceneMode.Additive);
+        if (!titleMenuShown)
+        {
+            SceneManager.LoadScene("TitleScreenMenu", LoadSceneMode.Additive);
+            titleMenuShown = true;
+        }
+        else
+        {
+            StartCoroutine(ShowMainMenu());
+        }
+        SceneManager.LoadScene("DebugHUDScene", LoadSceneMode.Additive);
+    }
+
+    IEnumerator ShowMainMenu()
+    {
+        while (MainMenu.instance == null)
+        {
+            yield return null;
+        }
+        MainMenu.instance.TurnOn(null);
     }
 }

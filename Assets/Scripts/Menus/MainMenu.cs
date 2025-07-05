@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : Menu
 {
@@ -21,6 +22,20 @@ public class MainMenu : Menu
     {
         TurnOff(false);
         PlayMenu.instance.TurnOn(this);
+    }
+    
+    public void OnAssignmentPlayButton()
+    {
+        GameManager.instance.StartGame();
+    }
+
+    public void OnLoadButton()
+    {
+        if (SaveManager.instance.LoadExists(1))
+        {
+            TurnOff(false);
+            SaveManager.instance.LoadGame(1);
+        }
     }
 
     public void OnPracticeButton()
