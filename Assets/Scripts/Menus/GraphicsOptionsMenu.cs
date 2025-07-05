@@ -7,7 +7,12 @@ public class GraphicsOptionsMenu : Menu
 {
     public static GraphicsOptionsMenu instance = null;
     public Toggle fullScreenToggle = null;
+    public Button nextButton = null;
+    public Button prevButton = null;
+    public Text resolutionText = null;
+
     public bool fullScreenToApply = true;
+    private Resolution resolutionToApply;
 
     private void Start()
     {
@@ -24,6 +29,17 @@ public class GraphicsOptionsMenu : Menu
             fullScreenToggle.isOn = ScreenManager.instance.fullScreen;
         }
         fullScreenToApply = ScreenManager.instance.fullScreen;
+        resolutionToApply = ScreenManager.instance.currentResolution;
+
+        if (resolutionText)
+        {
+            resolutionText.text = resolutionToApply.width + "x" + resolutionToApply.height + " - " + resolutionToApply.refreshRate;
+        }
+    }
+
+    public void OnBackButton()
+    {
+        TurnOff(true);
     }
 
     public void OnApplyButton()
@@ -49,8 +65,21 @@ public class GraphicsOptionsMenu : Menu
         fullScreenToApply = !fullScreenToApply;
     }
 
-    public void OnBackButton()
+    public void OnNextButton()
     {
-        TurnOff(true);
+        resolutionToApply = ScreenManager.instance.NextResolution(resolutionToApply);
+        if (resolutionText)
+        {
+            resolutionText.text = resolutionToApply.width + "x" + resolutionToApply.height + " - " + resolutionToApply.refreshRate;
+        }
+    }
+
+    public void OnPrevButton()
+    {
+        resolutionToApply = ScreenManager.instance.PrevResolution(resolutionToApply);
+        if (resolutionText)
+        {
+            resolutionText.text = resolutionToApply.width + "x" + resolutionToApply.height + " - " + resolutionToApply.refreshRate;
+        }
     }
 }

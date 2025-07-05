@@ -35,6 +35,7 @@ public class DebugManager: MonoBehaviour
                 ROOT.SetActive(true);
                 displaying = true;
                 Time.timeScale = 0; // pause
+                Cursor.visible = true;
             }
         }
         else
@@ -48,6 +49,7 @@ public class DebugManager: MonoBehaviour
                 ROOT.SetActive(false);
                 displaying = false;
                 Time.timeScale = 1; // resume
+                Cursor.visible = false;
             }
         }
     }
