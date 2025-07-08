@@ -10,7 +10,10 @@ public class HUD : MonoBehaviour
     public AnimatedNumber[] playerScore = new AnimatedNumber[2];
     public AnimatedNumber topScore;
     public GameObject player2Start;
+    public GameObject HudBackground;
+    public GameObject player1Hud;
     public GameObject player2Hud;
+    public Image fadeToBlackImage;
 
     public PlayerHUD[] playerHUDs = new PlayerHUD[2];
 
@@ -299,6 +302,52 @@ public class HUD : MonoBehaviour
             player2Start.gameObject.SetActive(true);
             playerScore[1].gameObject.SetActive(false);
             player2Hud.SetActive(false);
+        }
+    }
+
+    public void FadeOut()
+    {
+        fadeToBlackImage.gameObject.SetActive(true);
+        fadeToBlackImage.color = Color.black;
+    }
+
+    public void FadeIn()
+    {
+        fadeToBlackImage.gameObject.SetActive(false);
+        fadeToBlackImage.color = new Color(0, 0, 0, 0);
+    }
+
+    public void HideHUD()
+    {
+        HudBackground.SetActive(false);
+        topScore.gameObject.SetActive(false);
+        player1Hud.SetActive(false);
+        playerScore[0].gameObject.SetActive(false);
+        if (GameManager.instance.twoPlayer)
+        {
+            player2Hud.SetActive(false);
+            playerScore[1].gameObject.SetActive(false);
+        }
+        else
+        {
+            player2Start.SetActive(false);
+        }
+    }
+
+    public void ShowHUD()
+    {
+        HudBackground.SetActive(true);
+        topScore.gameObject.SetActive(true);
+        player1Hud.SetActive(true);
+        playerScore[0].gameObject.SetActive(true);
+        if (GameManager.instance.twoPlayer)
+        {
+            player2Hud.SetActive(true);
+            playerScore[1].gameObject.SetActive(true);
+        }
+        else
+        {
+            player2Start.SetActive(true);
         }
     }
 }

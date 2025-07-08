@@ -43,6 +43,7 @@ public class ControlsOptionsMenu : Menu
 
     public void OnBackButton()
     {
+        HUD.instance.ShowHUD();
         TurnOff(true);
     }
 

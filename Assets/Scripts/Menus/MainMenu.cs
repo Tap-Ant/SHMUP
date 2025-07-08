@@ -38,12 +38,6 @@ public class MainMenu : Menu
         }
     }
 
-    public void OnPracticeButton()
-    {
-        TurnOff(false);
-        PracticeMenu.instance.TurnOn(this);
-    }
-
     public void OnOptionsButton()
     {
         TurnOff(false);
@@ -54,24 +48,6 @@ public class MainMenu : Menu
     {
         TurnOff(false);
         ScoresMenu.instance.TurnOn(this);
-    }
-
-    public void OnMedalsButton()
-    {
-        TurnOff(false);
-        MedalsMenu.instance.TurnOn(this);
-    }
-
-    public void OnReplaysButton()
-    {
-        TurnOff(false);
-        ReplaysMenu.instance.TurnOn(this);
-    }
-
-    public void OnCreditsButton()
-    {
-        TurnOff(false);
-        CreditsMenu.instance.TurnOn(this);
     }
 
     public void OnQuitButton()

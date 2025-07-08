@@ -26,6 +26,7 @@ public class OptionsMenu : Menu
     public void OnControlsButton()
     {
         TurnOff(false);
+        HUD.instance.HideHUD();
         ControlsOptionsMenu.instance.TurnOn(this);
     }
 

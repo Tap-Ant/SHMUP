@@ -32,7 +32,8 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("YesNoMenu",           LoadSceneMode.Additive);
         SceneManager.LoadScene("ControllerMenu",      LoadSceneMode.Additive);
         SceneManager.LoadScene("GameOverMenu",        LoadSceneMode.Additive);
-        SceneManager.LoadScene("KeypadMenu",        LoadSceneMode.Additive);
+        SceneManager.LoadScene("KeypadMenu",          LoadSceneMode.Additive);
+        SceneManager.LoadScene("VictoryMenu",         LoadSceneMode.Additive);
 
         SceneManager.LoadScene("DebugHUDScene",       LoadSceneMode.Additive);
     }
@@ -43,15 +44,9 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("AudioOptionsMenu",    LoadSceneMode.Additive);
         SceneManager.LoadScene("ControlsOptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("CraftSelectMenu",     LoadSceneMode.Additive);
-        SceneManager.LoadScene("CreditsMenu",         LoadSceneMode.Additive);
         SceneManager.LoadScene("GraphicsOptionsMenu", LoadSceneMode.Additive);
-        SceneManager.LoadScene("MedalsMenu",          LoadSceneMode.Additive);
         SceneManager.LoadScene("OptionsMenu",         LoadSceneMode.Additive);
         SceneManager.LoadScene("PlayMenu",            LoadSceneMode.Additive);
-        SceneManager.LoadScene("PracticeMenu",        LoadSceneMode.Additive);
-        SceneManager.LoadScene("PracticeArenaMenu",   LoadSceneMode.Additive);
-        SceneManager.LoadScene("PracticeStageMenu",   LoadSceneMode.Additive);
-        SceneManager.LoadScene("ReplaysMenu",         LoadSceneMode.Additive);
         SceneManager.LoadScene("ScoresMenu",          LoadSceneMode.Additive);
         SceneManager.LoadScene("YesNoMenu",           LoadSceneMode.Additive);
         SceneManager.LoadScene("ControllerMenu",      LoadSceneMode.Additive);
