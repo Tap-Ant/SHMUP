@@ -74,7 +74,7 @@ public class CraftSelectMenu : Menu
         if (InputManager.instance.playerState[0].shoot)
             StartCountdown();
 
-        if (InputManager.instance.playerState[1].shoot)
+        if (InputManager.instance.playerState[1].shoot && ROOT.gameObject.activeInHierarchy)
         {
             player2StartText.gameObject.SetActive(false);
             player2Panel.SetActive(true);
