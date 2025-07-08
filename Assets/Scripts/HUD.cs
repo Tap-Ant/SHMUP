@@ -291,7 +291,7 @@ public class HUD : MonoBehaviour
 
     public void TurnOnP2(bool turnOn)
     {
-        if (turnOn)
+        if (turnOn && ROOT.gameObject.activeInHierarchy)
         {
             player2Start.gameObject.SetActive(false);
             playerScore[1].gameObject.SetActive(true);

@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public bool twoPlayer = false;
     public GameObject[] craftPrefabs;
-    //public Craft playerOneCraft = null;
     public Craft[] playerCrafts = new Craft[2];
     public PlayerData[] playerDatas;
     public BulletManager bulletManager = null;
@@ -131,65 +130,22 @@ public class GameManager : MonoBehaviour
             TogglePause();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            if (!playerCrafts[0])
-            {
-                SpawnPlayer(0, 0);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (playerCrafts[0] && gameSession.craftDatas[0].shotPower < CraftConfiguration.MAX_SHOT_POWER)
-            {
-                gameSession.craftDatas[0].shotPower++;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            if (playerCrafts[0])
-            {
-                playerCrafts[0].AddOption(0);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (playerCrafts[0])
-            {
-                playerCrafts[0].IncreaseBeamStrength(0);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            EnemyPattern testPattern = GameObject.FindObjectOfType<EnemyPattern>();
-            testPattern.Spawn();
-        }
-
-        // explode
+        // Debug Explode
         if (Input.GetKeyDown(KeyCode.L))
         {
             if (playerCrafts[0])
             {
                 playerCrafts[0].Explode();
             }
+            if (playerCrafts[1])
+            {
+                playerCrafts[1].Explode();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             DebugManager.instance.ToggleHUD();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            AudioManager.instance.PlayMusic(AudioManager.Tracks.Level01, true, 2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            AudioManager.instance.PlayMusic(AudioManager.Tracks.Boss01, true, 2);
         }
     }
 
