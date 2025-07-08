@@ -58,7 +58,7 @@ public class WaveTrigger : MonoBehaviour
     {
         foreach(EnemyPattern pattern in patterns)
         {
-            Handles.DrawLine(transform.position, pattern.transform.position);
+            if (pattern) Handles.DrawLine(transform.position, pattern.transform.position);
         }
     }
 #endif
