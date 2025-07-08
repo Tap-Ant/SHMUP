@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static GameManager;
 
 public class GameManager : MonoBehaviour
@@ -197,8 +198,8 @@ public class GameManager : MonoBehaviour
         gameState = GameState.Playing;
         ResetState(0);
         ResetState(1);
-        playerDatas[0].score = 0;
-        playerDatas[1].score = 0;
+        playerDatas[0].ResetData();
+        playerDatas[1].ResetData();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Stage01");
     }
 
@@ -269,5 +270,20 @@ public class GameManager : MonoBehaviour
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Stage02");
                 break;
         }
+    }
+
+    public void NextStage()
+    {
+        HUD.instance.FadeOut();
+        if (gameSession.stage == 1)
+        {
+            gameSession.stage = 2;
+            SceneManager.LoadScene("Stage02");
+        }
+        else if (gameSession.stage == 2)
+        {
+            VictoryMenu.instance.TurnOn(null);
+        }
+        HUD.instance.FadeIn();
     }
 }

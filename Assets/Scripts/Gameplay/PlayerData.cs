@@ -28,4 +28,13 @@ public class PlayerData
         score = reader.ReadInt32();
         lives = reader.ReadByte();
     }
+
+    public void ResetData()
+    {
+        score = 0;
+        stageScore = 0;
+        lives = 3;
+        chain = 0;
+        chainTimer = 0;
+    }
 }
