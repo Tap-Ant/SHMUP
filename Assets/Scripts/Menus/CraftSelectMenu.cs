@@ -71,9 +71,6 @@ public class CraftSelectMenu : Menu
 
     private void FixedUpdate()
     {
-        if (InputManager.instance.playerState[0].shoot)
-            StartCountdown();
-
         if (InputManager.instance.playerState[1].shoot && ROOT.gameObject.activeInHierarchy)
         {
             player2StartText.gameObject.SetActive(false);
