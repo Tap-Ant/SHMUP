@@ -233,8 +233,11 @@ public class GameManager : MonoBehaviour
         HUD.instance.FadeOut();
         if (gameSession.stage == 1)
         {
+            /*
             gameSession.stage = 2;
             SceneManager.LoadScene("Stage02");
+            */
+            VictoryMenu.instance.TurnOn(null);
         }
         else if (gameSession.stage == 2)
         {
