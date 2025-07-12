@@ -8,6 +8,7 @@ Download the .zip from BuildWin/ on your Windows device, extract, and run the ex
 
 ## Some TODOs:
 * More enemies & tougher boss
+* Finalized stage graphics (rocks changing into big squares is not a design choice)
 * working WebGL build
 * more difficulty stages (only 1 currently)
 * non-hardcoded Craft configs
