@@ -146,7 +146,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ShootableDestroyed(int playerIndex, int score)
     {
-        GameManager.instance.playerCrafts[playerIndex].IncreaseScore(score * currentMultiplier);
+        if (playerIndex < 2) GameManager.instance.playerCrafts[playerIndex].IncreaseScore(score * currentMultiplier);
     }
 
     public void BossDestroyed(int playerIndex, int score)

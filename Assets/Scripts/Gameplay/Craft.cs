@@ -68,6 +68,7 @@ public class Craft : MonoBehaviour
         {
             s.playerIndex = (byte)playerIndex;
         }
+        beam.playerIndex = (byte)playerIndex;
     }
 
     void FixedUpdate()
@@ -352,6 +353,7 @@ public class Craft : MonoBehaviour
         if (craftData.noOfEnabledOptions<4)
         {
             options[craftData.noOfEnabledOptions].gameObject.SetActive(true);
+            options[craftData.noOfEnabledOptions].shotSpawner.playerIndex = (byte)playerIndex;
             craftData.noOfEnabledOptions++;
         }
         else

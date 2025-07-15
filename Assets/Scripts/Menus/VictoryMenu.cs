@@ -20,6 +20,12 @@ public class VictoryMenu : Menu
         instance = this;
     }
 
+    public override void TurnOn(Menu previous)
+    {
+        base.TurnOn(previous);
+        AudioManager.instance.PlayMusic(AudioManager.Tracks.Menu, false, 2.0f);
+    }
+
     public void OnContinueButton()
     {
         SceneManager.LoadScene("MainMenuScene");
